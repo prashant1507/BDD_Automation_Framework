@@ -34,7 +34,9 @@ Below are the component details of the framework:
     -  JSON File
 
 -   #### Test Scripts
-    [TestNg](https://mvnrepository.com/artifact/org.testng/testng/) is used as a unit test framework in order to generate test script taking into account   the `Page Object Model` design pattern.
+    [Cucumber TestNg](https://mvnrepository.com/artifact/io.cucumber/cucumber-testng) is used as a unit test framework in order to generate test script taking into account the `Page Object Model` design pattern.
+
+    All the feature files are in [Features](src/test/resources/Features)
 
 -   #### Build Tool
     Using `maven`, project dependencies are managed. Test can be run using `pom.xml` and `testng.xml`.
@@ -52,6 +54,7 @@ Below are the component details of the framework:
     -   Tests can be executed in parallel and in cross browsers by using:
         - [pom.xml](pom.xml)
         - [testng.xml](testng.xml)
+        - [TestRunner.java](src/test/java/org/automation/tests/TestRunner.java)
         - Jenkins
     -   Tests can be executed using:
         - local browsers
