@@ -20,18 +20,18 @@ public final class LoginPage extends BasePage {
 	}
 
 	public void enterUsername(String username) {
-		sendKeys(usernameTextBox, username, "Username");
+		sendKeys(usernameTextBox, username);
 	}
 
 	public void enterPassword(String password) {
-		sendKeys(passwordTextBox, password, "Password");
+		sendKeys(passwordTextBox, password);
 	}
 
 	public void clickLoginBtn() {
-		click(loginBtn, "Login button");
+		click(loginBtn);
 	}
 	
 	public String getInvalidCredentialsErrorMsg() {
-		return getText(invalidCredentialsErrorMsg, "Invalid credential error message");
+		return getText(invalidCredentialsErrorMsg);
 	}
 }

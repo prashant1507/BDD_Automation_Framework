@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.automation.pages.HomePage;
 import org.automation.pages.LoginPage;
+import org.automation.reports.ExtentLogger;
 import org.testng.Assert;
 import org.testng.SkipException;
 
@@ -14,6 +15,7 @@ public final class LoginSteps {
 
 	@When("^Login Page is displayed$")
 	public void verifyLoginPage() {
+		ExtentLogger.pass();
 		Assert.assertTrue(loginPage.isForgotPasswordLinkDisplayed(), "Forgot Password link is not displayed.");
 	}
 
@@ -39,6 +41,7 @@ public final class LoginSteps {
 
 	@Then("^User is at homepage$")
 	public void userIsAtHomepage() {
-		Assert.assertTrue(homePage.getWelcomeText("Welcomes"), "Failed to login.");
+		ExtentLogger.pass();
+		Assert.assertTrue(homePage.getWelcomeText("Welcome"), "Failed to login.");
 	}
 }

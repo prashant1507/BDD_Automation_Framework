@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="methods" thread-count="5"
-	verbose="10" preserve-order="true" data-provider-thread-count="2">
+<suite name="Suite" parallel="methods" thread-count="1"
+	verbose="10" preserve-order="true" data-provider-thread-count="5">
 
 	<listeners>
 		<listener class-name="org.automation.listeners.Listener" />
@@ -15,12 +15,12 @@
 			<class name="org.automation.tests.TestRunner" />
 		</classes>
 	</test>
-<!--	<test name="firefox">-->
-<!--		<parameter name="Browser" value="Firefox" />-->
-<!--		<classes>-->
-<!--			<class name="org.automation.steps.LoginSteps" />-->
-<!--		</classes>-->
-<!--	</test>-->
+	<test name="firefox">
+		<parameter name="Browser" value="Firefox" />
+		<classes>
+			<class name="org.automation.tests.TestRunner" />
+		</classes>
+	</test>
 </suite>
 
 

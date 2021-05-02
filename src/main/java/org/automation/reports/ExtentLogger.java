@@ -25,7 +25,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ExtentLogger {
 
-	public static void pass(String msg) {
+	public static void pass() {
+		String msg = StepsManager.getStepText();
 		if (PropertyUtils.get(ConfigMap.PASSEDSCREENSHOT).equalsIgnoreCase(GlobalVars.getYes()))
 			ExtentManager.getExtentTest().pass(msg,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
@@ -34,11 +35,11 @@ public final class ExtentLogger {
 	}
 
 	public static void fail(String msg) {
-		ExtentManager.getExtentTest().fail(msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+		ExtentManager.getExtentTest().fail(StepsManager.getStepText() + msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 	}
 
 	public static void skip(String msg) {
-		ExtentManager.getExtentTest().skip(msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+		ExtentManager.getExtentTest().skip(StepsManager.getStepText() + msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 	}
 	
 	public static void info(String msg) {

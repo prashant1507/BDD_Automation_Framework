@@ -8,10 +8,10 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 [Properties file for execution settings](src/test/resources/config/Config.properties)
 
 ### _Project Features_
-- Supports parallel test.   
+- Supports parallel features execution.   
 - Multiple browsers can be setup.
 - Generates report after each run for all test cases with screenshots.
-- Record video for failed test cases.
+- Record video for failed and skipped test cases.
 - Option to auto manage drives using WebDriverManager.
 - Option to send report to email.
 - Option to run tests on local or remote.
@@ -62,8 +62,6 @@ Below are the component details of the framework:
         - docker selenium grid
         - selenium grid
         - selenoid
-    
-    **Note:** Will add support to run using Jenkins.
 
 -   #### Other Components
     - [JavaMail API](https://mvnrepository.com/artifact/com.sun.mail/javax.mail) and [JavaBeans(TM) Activation Framework](https://mvnrepository.com/artifact/javax.activation/activation) is used to send the test report automatically on email using gmail or outlook. However, user can still decide if report has to be send or not.<br/>

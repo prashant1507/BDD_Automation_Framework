@@ -3,6 +3,7 @@ package org.automation.pages;
 import java.util.List;
 import org.automation.driver.DriverManager;
 import org.automation.reports.ExtentLogger;
+import org.automation.reports.StepsManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -36,24 +37,24 @@ public class BasePage {
 		}
 	}
 
-	protected void click(By by, String elementNameForReport) {
+	protected void click(By by) {
 		DriverManager.getDriver().findElement(by).click();
-		ExtentLogger.pass(elementNameForReport + " - clicked Successfully.");
+		ExtentLogger.pass();
 	}
 
-	protected void clear(By by, String elementNameForReport) {
+	protected void clear(By by) {
 		DriverManager.getDriver().findElement(by).clear();
-		ExtentLogger.pass(elementNameForReport + " - cleared Successfully.");
+		ExtentLogger.pass();
 	}
 
-	protected void sendKeys(By by, String value, String elementNameForReport) {
+	protected void sendKeys(By by, String value) {
 		DriverManager.getDriver().findElement(by).sendKeys(value);
-		ExtentLogger.pass(elementNameForReport + " - '" + value + "' sent successfully.");
+		ExtentLogger.pass();
 	}
 	
-	protected String getText(By by, String elementNameForReport) {
+	protected String getText(By by) {
 		String text = DriverManager.getDriver().findElement(by).getText();
-		ExtentLogger.pass(elementNameForReport +" - '" + text + "' obtained successfully.");
+		ExtentLogger.pass();
 		return text;
 	}
 

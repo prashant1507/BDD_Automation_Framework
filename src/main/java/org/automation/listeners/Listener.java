@@ -77,7 +77,7 @@ public class Listener implements ITestListener, ISuiteListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
-		ExtentLogger.fail(result.getThrowable().toString() + "<br/><br/>"
+		ExtentLogger.fail("<br/>" + result.getThrowable().toString() + "<br/><br/>"
 				+ Arrays.toString(result.getThrowable().getStackTrace()));
 		ExtentLogger.info("<video width='620' height='340' controls> <source src='" + TestRecording.getRecording()
 				+ "' type='video/mp4'> <videos>");
@@ -86,7 +86,7 @@ public class Listener implements ITestListener, ISuiteListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		ExtentLogger.skip("Status: Skip");
+		ExtentLogger.skip("<br/> Status: Skip");
 		ExtentLogger.info("<video width='620' height='340' controls> <source src='" + TestRecording.getRecording()
 				+ "' type='video/mp4'> <videos>");
 		ELKUtils.sendDetailsToELK(
