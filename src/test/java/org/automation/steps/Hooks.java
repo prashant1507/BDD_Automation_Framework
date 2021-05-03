@@ -18,9 +18,6 @@ public class Hooks {
 
     @BeforeStep
     public void getStepText(Scenario scenario) throws Exception {
-
-        String  currentStepText;
-        String currentKeyword;
         Field f = scenario.getClass().getDeclaredField("delegate");
         f.setAccessible(true);
         TestCaseState tcs = (TestCaseState) f.get(scenario);
@@ -29,17 +26,17 @@ public class Hooks {
         f2.setAccessible(true);
         TestCase r = (TestCase) f2.get(tcs);
 
-        List<PickleStepTestStep> stepDefs = r.getTestSteps()
+        List<PickleStepTestStep> stepDef = r.getTestSteps()
                 .stream()
                 .filter(x -> x instanceof PickleStepTestStep)
                 .map(x -> (PickleStepTestStep) x)
                 .collect(Collectors.toList());
 
-        PickleStepTestStep currentStepDef = stepDefs.get(currentStepDefIndex);
-        currentKeyword = currentStepDef.getStep().getKeyword();
-        currentStepText = currentStepDef.getStep().getText();
+        PickleStepTestStep currentStepDef = stepDef.get(currentStepDefIndex);
+        String currentKeyword = currentStepDef.getStep().getKeyword();
+        String currentStepText = currentStepDef.getStep().getText();
         currentStepDefIndex++;
-        StepsManager.setStepText(currentKeyword + " " +currentStepText);
+        StepsManager.setStepText(currentKeyword + " " + currentStepText);
     }
 
     @After

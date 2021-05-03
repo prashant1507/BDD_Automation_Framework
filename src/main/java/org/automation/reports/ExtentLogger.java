@@ -35,11 +35,13 @@ public final class ExtentLogger {
 	}
 
 	public static void fail(String msg) {
-		ExtentManager.getExtentTest().fail(StepsManager.getStepText() + msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+		msg = StepsManager.getStepText() + msg;
+		ExtentManager.getExtentTest().fail(msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 	}
 
 	public static void skip(String msg) {
-		ExtentManager.getExtentTest().skip(StepsManager.getStepText() + msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+		msg = StepsManager.getStepText() + msg;
+		ExtentManager.getExtentTest().skip(msg, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 	}
 	
 	public static void info(String msg) {
