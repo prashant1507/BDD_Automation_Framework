@@ -15,7 +15,7 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 - Generates report after each run for all test cases with screenshots.
 - Record video for failed and skipped test cases.
 - Option to auto manage drives using WebDriverManager.
-- Option to send report to email.
+- Option to send report to email (Gmail / Outlook).
 - Option to run tests on local or remote.
 - Read data from Properties file, Excel, JSON files.
 - Real time reporting using ELK.
