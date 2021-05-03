@@ -56,7 +56,7 @@ public final class ExtentReport {
 			// Setting the view order for the tabs in report
 			ExtentSparkReporter spark = new ExtentSparkReporter(ReportPath.getReportPath()).viewConfigurer()
 					.viewOrder().as(new ViewName[] { ViewName.DASHBOARD, ViewName.TEST, ViewName.CATEGORY,
-							ViewName.DEVICE, ViewName.AUTHOR })
+							ViewName.DEVICE, ViewName.AUTHOR, ViewName.EXCEPTION, ViewName.EXCEPTION })
 					.apply();
 
 			extentReports = new ExtentReports();

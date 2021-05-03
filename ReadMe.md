@@ -5,7 +5,9 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 [Project's Java Docs](java-doc)   
 [Sample Test Report](framework-generate-sample-report/ExecutionReport.html)   
 [Sample Test Video](framework-generate-sample-report)   
-[Properties file for execution settings](src/test/resources/config/Config.properties)
+[Execution Settings](src/test/resources/config/Config.properties)  
+[Feature Files](src/test/resources/Features)  
+[Step Files](src/test/java/org/automation/steps)
 
 ### _Project Features_
 - Supports parallel features execution.   
