@@ -44,7 +44,7 @@ pipeline {
         // }
         stage('Clean workspace') {
             steps {
-                deleteDir()
+                cleanWs()
                 checkout scm
             }
         }
@@ -65,26 +65,26 @@ pipeline {
                             error("Receiver emailID is empty")
                         }
                     }
-                    if (params.Url.isEmpty()) { 
+                    if (params.Url.isEmpty()) {
                         currentBuild.result = 'ABORTED'
                         error("Url is empty")
                     }
-                    if (params.Env.isEmpty()) { 
+                    if (params.Env.isEmpty()) {
                         currentBuild.result = 'ABORTED'
                         error("Env is empty")
                     }
-                    if (params.TesterName.isEmpty()) { 
+                    if (params.TesterName.isEmpty()) {
                         currentBuild.result = 'ABORTED'
                         error("Tester name is empty")
                     }
-                    if (params.RunMode == 'grid' || params.RunMode == 'selenoid') { 
-                        if (params.RemoteUrl.isEmpty()) { 
+                    if (params.RunMode == 'grid' || params.RunMode == 'selenoid') {
+                        if (params.RemoteUrl.isEmpty()) {
                             currentBuild.result = 'ABORTED'
                             error("Remote url is empty")
                         }
                     }
-                    if (params.UseElk == 'yes') { 
-                        if (params.ElasticSearchUrl.isEmpty()) { 
+                    if (params.UseElk == 'yes') {
+                        if (params.ElasticSearchUrl.isEmpty()) {
                             currentBuild.result = 'ABORTED'
                             error("Elastic Search url is empty")
                         }
@@ -120,14 +120,14 @@ pipeline {
     }
     post {
         always {
-            publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: false,
-                reportDir: 'test-reports',
-                reportFiles: '*.html',
-                reportName: 'Test Execution Report'
-            ]
+            publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'test-reports',
+            reportFiles: '*.html',
+            reportName: 'Test Execution Report',
+            reportTitles: ''])
         }
     }
 }
