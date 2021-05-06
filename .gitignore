@@ -4,7 +4,6 @@
 .classpath
 .factorypath
 .project
-.idea
 .DS_STORE
 old-report-data.json
 target
