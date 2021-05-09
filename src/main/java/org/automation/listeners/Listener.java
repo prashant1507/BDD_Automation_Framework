@@ -17,6 +17,7 @@ import org.automation.utils.FileSystemHandler;
 import org.automation.utils.UserInputCheck;
 import org.testng.*;
 import org.testng.annotations.Test;
+import org.testng.xml.XmlSuite;
 
 /**
  * To set various methods for handling test cases
@@ -39,6 +40,8 @@ public class Listener implements ITestListener, ISuiteListener {
 	 */
 
 	public void onStart(ISuite suite) {
+		XmlSuite a = suite.getXmlSuite();
+		int z = a.getThreadCount();
 		try {
 			if (PropertyUtils.get(ConfigMap.SENDMAILAFTEREXECUTION)
 					.equalsIgnoreCase(GlobalVars.getYes())) {
