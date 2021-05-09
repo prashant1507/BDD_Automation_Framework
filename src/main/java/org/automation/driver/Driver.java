@@ -20,23 +20,23 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
- * 
+ *
  * Setup the web driver and removes it at the end of execution. <br>
  * Class is final to avoid extend. <br>
  * <br>
  * Apr 8, 2021
- * 
+ *
  * @author User1
  * @version 1.0
  *
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Driver {
-	
+
 	/**
 	 * Setup the web driver for browser <br>
 	 * Apr 8, 2021
-	 * 
+	 *
 	 * @param browser current browser where the test will run.
 	 *
 	 */
@@ -126,6 +126,10 @@ public final class Driver {
 						"Test_" + (new SimpleDateFormat(GlobalVars.getDateTimeFormat1()).format(new Date())));
 				DriverManager
 						.setDriver(new RemoteWebDriver(new URL(PropertyUtils.get(ConfigMap.REMOTEURL)), cap));
+			} else if (PropertyUtils.get(ConfigMap.RUNMODE).equalsIgnoreCase(GlobalVars.getZalenium())) {
+				// set capabilities if required. Refer website
+				DriverManager
+						.setDriver(new RemoteWebDriver(new URL(PropertyUtils.get(ConfigMap.REMOTEURL)), cap));
 			}
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -135,12 +139,12 @@ public final class Driver {
 	/**
 	 * Setup the Chrome driver based on operating system. <br>
 	 * Apr 8, 2021
-	 * 
+	 *
 	 * @return String
 	 *
 	 */
 	private static String setChromeDriverPath() {
-		String os = GlobalVars.getOsPlatform(); 
+		String os = GlobalVars.getOsPlatform();
 		String driver = "";
 		try {
 			if (os.startsWith(GlobalVars.getWin())) {
@@ -161,7 +165,7 @@ public final class Driver {
 	/**
 	 * Setup the Chrome driver based on operating system. <br>
 	 * Apr 8, 2021
-	 * 
+	 *
 	 * @return String
 	 *
 	 */

@@ -19,10 +19,18 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 - Option to run tests on local or remote.
 - Read data from Properties file, Excel, JSON files.
 - Real time reporting using ELK.
-- Option to run on docker grid or selenoid.<br/>
+- Option to run on docker grid, local, zalenium or selenoid.
+- On-demand instance creation using [Zalenium](https://opensource.zalando.com/zalenium/).
 - Run using [JenkinsFile](src/test/resources/Jenkins/Jenkinsfile).
 - [JenkinsFile to setup docker-selenium-grid](src/test/resources/Jenkins/Jenkinsfile-selenium-grid).
-  
+
+### _Docker Compose File_
+- [Elastic Search Kibana](src/test/resources/docker/docker-compose-elastic-search-kibana.yml)
+- [Jenkins](src/test/resources/docker/docker-compose-jenkins.yml)
+- [Selenium Grid 4](src/test/resources/docker/docker-compose-selenium-grid.yml)
+- [Selenoid](src/test/resources/docker/docker-compose-selenoid.yml)
+- [Zalenium](src/test/resources/docker/docker-compose-zelenium.yml)
+
 ### _Project Components_
 Below are the component details of the framework:
 
@@ -64,6 +72,7 @@ Below are the component details of the framework:
         - docker selenium grid
         - selenium grid
         - selenoid
+        - zalenium
 
 -   #### Other Components
     - [JavaMail API](https://mvnrepository.com/artifact/com.sun.mail/javax.mail) and [JavaBeans(TM) Activation Framework](https://mvnrepository.com/artifact/javax.activation/activation) is used to send the test report automatically on email using gmail or outlook. However, user can still decide if report has to be send or not.<br/>
@@ -83,7 +92,7 @@ Below are the component details of the framework:
 -   `environment` where the test has to be performed.
 -   `testername` inorder to keep track.
 -   `downloadwebdriver` to decide if tester want to place the drivers or wants the framework to download it with the help of [WebDriverManager](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager).
--	`runmode` decides whether to run test cases on local, grid (/ docker-grid) or selenoid. Accepts yes or no.
+-	`runmode` decides whether to run test cases on local, grid (/ docker-grid), zalenium or selenoid. Accepts yes or no.
      -  if `runmode` is yes then user has to provide the remote url in `remoteurl`.
 -   `environment` which is to be tested.
 -   `testername` name of the tester.
@@ -127,4 +136,9 @@ Below are the component details of the framework:
 ### Notes:
 1.	For Jenkins to support extent reporting (or other CSS, etc. components ) run below in scripts `https://jenkisURL/script`
       `System.setProperty("hudson.model.DirectoryBrowserSupport.CSP","")`	
-2. Project required [lombok setup](https://www.baeldung.com/lombok-ide).
+2. Uses [lombok](https://www.baeldung.com/lombok-ide).
+
+### References:
+- [Zalenium](https://opensource.zalando.com/zalenium/)
+- [Selenium Grid 4](https://github.com/SeleniumHQ/docker-selenium)
+- [Selenoid](https://github.com/aerokube/selenoid)
