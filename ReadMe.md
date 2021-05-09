@@ -22,7 +22,6 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 - Option to run on docker grid, local, zalenium or selenoid.
 - On-demand instance creation using [Zalenium](https://opensource.zalando.com/zalenium/).
 - Run using [JenkinsFile](src/test/resources/Jenkins/Jenkinsfile).
-- [JenkinsFile to setup docker-selenium-grid](src/test/resources/Jenkins/Jenkinsfile-selenium-grid).
 
 ### _Docker Compose File_
 - [Elastic Search Kibana](src/test/resources/docker/docker-compose-elastic-search-kibana.yml)
