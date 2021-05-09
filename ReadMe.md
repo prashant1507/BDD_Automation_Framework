@@ -20,7 +20,7 @@ This is a bdd java selenium framework which is using testng, maven, extent repor
 - Read data from Properties file, Excel, JSON files.
 - Real time reporting using ELK.
 - Option to run on docker grid, local, zalenium or selenoid.
-- On-demand browser instance creation using Dynamic Selenium Grid 4.
+- On-demand browser instance creation using [Dynamic Selenium Grid 4](https://github.com/SeleniumHQ/docker-selenium).
 - On-demand browser instance creation using [Zalenium](https://opensource.zalando.com/zalenium/).
 - Run using [JenkinsFile](src/test/resources/Jenkins/Jenkinsfile).
 
