@@ -11,6 +11,7 @@
       3. systemctl daemon-reload
       4.  systemctl restart docker.service
    ```
+   [Reference Link to set docker daemon](https://gist.github.com/styblope/dc55e0ad2a9848f2cc3307d4819d819f)
 2. Set IP:PORT in [config.toml](../src/test/resources/docker/Dynamic Selenium Grid/config.toml)
 3. Set config.toml in [docker-compose-dynamic-grid.yml](../src/test/resources/docker/Dynamic Selenium Grid/docker-compose-dynamic-grid.yml)
 4. Run `docker-compose up`
