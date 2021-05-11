@@ -36,7 +36,7 @@
 		<rest-assured.version>4.3.3</rest-assured.version>
 		<jcode-javas.version>0.2.5</jcode-javas.version>
 		<lombok.version>1.18.20</lombok.version>
-		<cucmber-java.version>6.10.3</cucmber-java.version>
+		<cucumber-java.version>6.10.3</cucumber-java.version>
 		<cucumber-testng.version>6.10.3</cucumber-testng.version>
 	</properties>
 
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>${cucmber-java.version}</version>
+			<version>${cucumber-java.version}</version>
 		</dependency>
 
 		<dependency>
