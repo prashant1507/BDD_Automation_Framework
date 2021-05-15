@@ -33,8 +33,8 @@ public class Hooks {
                 .collect(Collectors.toList());
 
         PickleStepTestStep currentStepDef = stepDef.get(currentStepDefIndex);
-        String currentKeyword = currentStepDef.getStep().getKeyword();
-        String currentStepText = currentStepDef.getStep().getText();
+        String currentKeyword = currentStepDef.getStep().getKeyword().trim();
+        String currentStepText = currentStepDef.getStep().getText().trim();
         currentStepDefIndex++;
         StepsManager.setStepText(currentKeyword + " " + currentStepText);
     }
