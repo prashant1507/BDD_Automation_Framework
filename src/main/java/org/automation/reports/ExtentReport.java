@@ -3,11 +3,8 @@ package org.automation.reports;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
-
-import com.aventstack.extentreports.GherkinKeyword;
-import com.aventstack.extentreports.gherkin.model.Feature;
-import com.aventstack.extentreports.gherkin.model.Scenario;
 import org.automation.constants.GlobalVars;
 import org.automation.enums.ConfigMap;
 import org.automation.setpath.ReportPath;
@@ -63,7 +60,7 @@ public final class ExtentReport {
 			spark.config().setTheme(Theme.DARK);
 			spark.config().setDocumentTitle(GlobalVars.getReportTitle());
 			spark.config().setReportName(GlobalVars.getReportName());
-			spark.config().setEncoding(GlobalVars.getUtf8());
+			spark.config().setEncoding(String.valueOf(StandardCharsets.UTF_8));
 			spark.config().setTimeStampFormat(GlobalVars.getDateTimeFormat2());
 			// spark.config().setOfflineMode(true);
 
